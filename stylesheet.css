@@ -1,0 +1,256 @@
+html, body,
+h1, h2,
+p,
+ul,li {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	font-size: 10px;
+	font-family: monospace;
+	color: #555;
+}
+
+a,
+a:hover,
+a:visited {
+	border:none;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+}
+
+.wrapper {
+	width:960px;
+	overflow: hidden;
+	margin:10em auto;
+	padding-top:8em;
+	padding-bottom: 20em;
+
+}
+
+.header {
+	position: relative;
+	height: 7em;
+	background-color: #fff;
+	width: 100%;
+	border-bottom: 0.1em solid #EF4A4B;
+}
+
+.fixed {
+	position: fixed;
+	top: 0;
+}
+
+.squiggle {
+	position: absolute;
+	top: 3em;
+	left: 50%;
+	margin-left: -4em;
+	width: 8em;
+	height: 8em;
+	background:url('img/logo-small.png') center center no-repeat;
+	background-color: #EF4A4B;
+	background-size: 80% auto;
+	cursor: default;
+	overflow: hidden;
+}
+
+.big-squiggle{
+	margin: auto;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background:url('img/logo.png') center center no-repeat;
+	background-color: #FFF;
+	background-size: 50% auto;
+	cursor: default;
+}
+
+h1 {
+	padding-top: 1em;
+	width:10em;
+	margin:auto;
+	text-align: center;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+h2 {
+	font-size: 1.8em;
+	line-height: 1em;
+	padding-bottom: 0.2em;
+}
+
+.rectangle {
+	float: left;
+	width: 20em;
+	height: 20em;
+	margin: 2em;
+	overflow: hidden;
+}
+
+.rectangle:first-child {
+	display: block;
+	float: none;
+	width: 92em;
+	height: 32em;
+}
+
+.tomato {
+	background-color: tomato;
+}
+
+.blue {
+	background-color: #EF4A4B;
+}
+
+
+@media screen and (max-width: 1000px){
+
+	.header {
+		height: 5.5em;
+	}
+
+
+	.squiggle {
+		top: 2.5em;
+		left: 50%;
+		margin-left: -3em;
+		width: 6em;
+		height: 6em;
+		background-size: 80% auto;
+
+	}
+
+	.wrapper {
+		width: 680px;
+		margin: 6em auto;
+	}
+
+	.rectangle {
+		width: 32em;
+		min-width: 30em;
+		height:32em;
+		margin: 1em;
+	}
+
+	.rectangle:first-child {
+		display: block;
+		float: none;
+		width: 66em;
+		height: 32em;
+	}
+}
+
+@media screen and (max-width: 710px){
+
+
+	.header {
+		height: 4em;
+	}
+
+
+	.squiggle {
+		top: 1.5em;
+		left: 50%;
+		margin-left: -2.5em;
+		width: 5em;
+		height: 5em;
+		background-size: 80% auto;
+
+	}
+
+	.wrapper {
+		width: 94%;
+		margin: 2em auto;
+	}
+
+	.rectangle {
+		width: 100%;
+		min-width: 30em;
+		margin:1em 0;
+	}
+
+}
+
+/* CSS3 ANIMATIONS */
+
+.animate {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.tada {
+  -webkit-animation-name: tada;
+  animation-name: tada;
+}
+
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    -ms-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    -ms-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    -ms-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
