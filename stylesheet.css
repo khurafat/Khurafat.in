@@ -52,11 +52,11 @@ a:visited {
 
 .squiggle {
 	position: absolute;
-	top: 3em;
+	top: 2em;
 	left: 50%;
-	margin-left: -4em;
-	width: 8em;
-	height: 8em;
+	margin-left: -6em;
+	width: 12em;
+	height: 12em;
 	background:url('img/logo-small.png') center center no-repeat;
 	background-color: #EF4A4B;
 	background-size: 80% auto;
