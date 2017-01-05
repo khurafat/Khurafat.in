@@ -13,7 +13,7 @@ body {
 	font-size: 10px;
 	font-family: monospace;
 	color: #555;
-    background-color: #EC4C4F;
+    background-color: #2E2633;
 }
 
 a,
@@ -40,7 +40,8 @@ a:visited {
 
 .header {
 	position: relative;
-	height: 7em;
+	height: 8em;
+	margin-bottom: 8em;
 	background-color: #fff;
 	width: 100%;
 	border-bottom: 0.1em solid #EF4A4B;
@@ -72,7 +73,7 @@ a:visited {
 	height: 100%;
 	background:url('img/logo2.png') center center no-repeat;
 	background-color: #EC4C4F;
-	background-size: 35% auto;
+	background-size: 48% auto;
 	cursor: default;
 }
 
@@ -113,6 +114,60 @@ h2 {
 .blue {
 	background-color: #EF4A4B;
 }
+
+#header ul {
+	padding: 1em;
+	list-style: none;
+	width: 49%;
+	display: inline-block;
+	-webkit-padding-start: 0px;
+}
+
+#header ul.pulll-right li {
+	display: inline-block;
+	margin-left: 5%;
+	float: right;
+	margin-bottom: -15px;
+}
+
+#header ul.pulll-left li {
+	display: inline-block;
+    margin-right: 5%;
+}
+
+#header ul li:hover, #header > a:hover {
+	-webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+    -webkit-animation-name: tada;
+    animation-name: tada;
+}
+
+
+.copyright p {
+	padding: 4em 4em 3em;
+    width: 49%;
+    display: inline-block;
+    box-sizing: border-box;
+    color: #FEFEFE;
+    font-size: 12px;
+    font-family: Helvetica Neue;
+    letter-spacing: 1px;
+}
+
+/*.copyright p.pulll-right {
+	display: inline-block;
+	margin-left: 5%;
+	float: right;
+	margin-bottom: -15px;
+}
+
+.copyright p.pulll-left {
+	display: inline-block;
+    margin-right: 5%;
+}*/
 
 
 @media screen and (max-width: 1000px){
