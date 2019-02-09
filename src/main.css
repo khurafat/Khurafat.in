@@ -63,6 +63,7 @@
 
 @font-face {
     font-family: "dabrushregular";
+    font-display: auto;
     src: url("./fonts/dabrush-webfont.woff2") format("woff2"),
         url("./fonts/dabrush-webfont.woff") format("woff");
     font-weight: normal;
@@ -70,6 +71,7 @@
 }
 @font-face {
     font-family: "proxima_novaregular";
+    font-display: auto;
     src: url("./fonts/proximanova-regular-webfont.woff2") format("woff2"),
         url("./fonts/proximanova-regular-webfont.woff") format("woff");
     font-weight: 400;
@@ -77,6 +79,7 @@
 }
 @font-face {
     font-family: "proxima_novalight";
+    font-display: auto;
     src: url("./fonts/proximanova-light-webfont.woff2") format("woff2"),
         url("./fonts/proximanova-light-webfont.woff") format("woff");
     font-weight: 300;
@@ -84,6 +87,7 @@
 }
 @font-face {
     font-family: "proxima_novabold";
+    font-display: auto;
     src: url("./fonts/proximanova-bold-webfont.woff2") format("woff2"),
         url("./fonts/proximanova-bold-webfont.woff") format("woff");
     font-weight: 600;
@@ -91,6 +95,7 @@
 }
 @font-face {
     font-family: "georgiab";
+    font-display: auto;
     src: url("./fonts/georgiab.eot");
     src: url("./fonts/georgiab.eot") format("embedded-opentype"),
         url("./fonts/georgiab.woff2") format("woff2"),
