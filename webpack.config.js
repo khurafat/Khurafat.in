@@ -2,7 +2,7 @@ const Path = require("path")
 const Webpack = require("webpack")
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
-// const PurgecssPlugin = require("purgecss-webpack-plugin")
+const PurgecssPlugin = require("purgecss-webpack-plugin")
 const PreloadWebpackPlugin = require("preload-webpack-plugin")
 const CopyWebpackPlugin = require("copy-webpack-plugin")
 const CleanWebpackPlugin = require("clean-webpack-plugin")
@@ -15,11 +15,11 @@ const BuildPath = Path.resolve(__dirname, "docs")
 // class names.
 //
 // https://github.com/FullHuman/purgecss#extractor
-// class TailwindExtractor {
-//   static extract(content) {
-//     return content.match(/[A-Za-z0-9-_:\/]+/g) || []
-//   }
-// }
+class TailwindExtractor {
+  static extract(content) {
+    return content.match(/[A-Za-z0-9-_:\/]+/g) || []
+  }
+}
 
 module.exports = {
   devtool: "source-map",
@@ -61,7 +61,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin([BuildPath], {
       root: __dirname,
-      exclude: ['CNAME'],
+      exclude: ['CNAME', 'robots.txt'],
       verbose: true,
       dry: false
     }),
@@ -88,20 +88,20 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: "images", to: "images" }
-    ])
+    ]),
+    new PurgecssPlugin({
+      // Specify the locations of any files you want to scan for class names.
+      paths: "src/index.html",
+      whitelist: ['forwhite'],
+      extractors: [
+        {
+          extractor: TailwindExtractor,
 
-    // new PurgecssPlugin({
-    //   // Specify the locations of any files you want to scan for class names.
-    //   paths: "src/index.html",
-    //   extractors: [
-    //     {
-    //       extractor: TailwindExtractor,
-
-    //       // Specify the file extensions to include when scanning for
-    //       // class names.
-    //       extensions: ["html"]
-    //     }
-    //   ]
-    // })
+          // Specify the file extensions to include when scanning for
+          // class names.
+          extensions: ["html"]
+        }
+      ]
+    })
   ]
 }
