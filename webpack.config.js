@@ -3,8 +3,9 @@ const Webpack = require("webpack")
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 // const PurgecssPlugin = require("purgecss-webpack-plugin")
-const PreloadWebpackPlugin = require('preload-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const PreloadWebpackPlugin = require("preload-webpack-plugin")
+const CopyWebpackPlugin = require("copy-webpack-plugin")
+const CleanWebpackPlugin = require("clean-webpack-plugin")
 
 
 
@@ -58,6 +59,11 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin([BuildPath], {
+      root: __dirname,
+      verbose: true,
+      dry: false
+    }),
     new Webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
@@ -71,16 +77,16 @@ module.exports = {
       inject: true
     }),
     new PreloadWebpackPlugin({
-      rel: 'preload',
+      rel: "preload",
       as(entry) {
-        if (/\.css$/.test(entry)) return 'style';
-        if (/\.woff|.woff2|.eot|.ttf$/.test(entry)) return 'font';
-        if (/\.png|.svg$/.test(entry)) return 'image';
-        return 'script';
+        if (/\.css$/.test(entry)) return "style"
+        if (/\.woff|.woff2|.eot|.ttf$/.test(entry)) return "font"
+        if (/\.png|.svg$/.test(entry)) return "image"
+        return "script"
       }
     }),
     new CopyWebpackPlugin([
-      { from: 'images', to: 'images' }
+      { from: "images", to: "images" }
     ])
 
     // new PurgecssPlugin({
