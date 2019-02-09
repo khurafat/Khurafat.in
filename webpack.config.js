@@ -61,6 +61,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin([BuildPath], {
       root: __dirname,
+      exclude: ['CNAME'],
       verbose: true,
       dry: false
     }),
